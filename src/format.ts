@@ -80,7 +80,8 @@ export function formatReport(report: Report, format: Format = 'text'): string {
     const how = group.source !== undefined ? `${group.mode}, source ${group.source}` : `${group.mode}, no source`;
     lines.push(`${group.ok ? 'ok   ' : 'DRIFT'} ${group.name} (${how})`);
     for (const file of group.files) {
-      lines.push(`    ${LABEL[file.status].padEnd(7)}  ${file.path}${file.message ? `  (${file.message})` : ''}`);
+      const label = file.status === 'reference' && group.source === undefined ? 'first' : LABEL[file.status];
+      lines.push(`    ${label.padEnd(7)}  ${file.path}${file.message ? `  (${file.message})` : ''}`);
       if (file.diff) lines.push(indent(file.diff));
     }
   }
