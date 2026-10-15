@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { EXIT, run } from '../src/run.js';
 import { VERSION } from '../src/index.js';
@@ -206,5 +207,19 @@ describe('--fix', () => {
     expect(parsed.dryRun).toBe(true);
     expect(parsed.changes).toHaveLength(1);
     expect(parsed.skipped[0].group).toBe('tokens');
+  });
+});
+
+describe('examples', () => {
+  it('the three-apps example passes', async () => {
+    const result = await cli(['--config', 'examples/three-apps/drift-check.config.json'], fileURLToPath(new URL('..', import.meta.url)));
+    expect(result.code).toBe(EXIT.OK);
+  });
+
+  it('the .mjs example is a valid config', async () => {
+    const { validateConfig } = await import('../src/index.js');
+    // @ts-expect-error: a plain .mjs file has no type declarations
+    const { default: config } = (await import('../examples/drift-check.config.mjs')) as { default: unknown };
+    expect(() => validateConfig(config)).not.toThrow();
   });
 });

@@ -1,0 +1,15 @@
+{
+  "groups": [
+    {
+      "name": "content",
+      "source": "shared/content.json",
+      "files": ["web/src/content.json", "api/data/content.json"],
+      "mode": "json"
+    },
+    {
+      "name": "design-tokens",
+      "files": ["*/src/tokens.css"],
+      "mode": "text"
+    }
+  ]
+}

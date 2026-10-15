@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "check:copies": "drift-check",
+    "fix:copies": "drift-check --fix",
+    "fix:copies:dry": "drift-check --fix --dry-run"
+  }
+}
