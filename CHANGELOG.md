@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-21
+
+### Changed
+
+- Published from GitHub Actions through npm trusted publishing, with a
+  provenance attestation linking the package to this repository. No code changes.
+
 ## [0.1.0] - 2026-10-16
 
 ### Added
@@ -19,5 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `drift-check --fix` copies each source over the copies that differ, are invalid or missing; `--dry-run` lists what it would write.
 - API: `checkDrift`, `fixDrift`, `defineConfig`, `loadConfig`, `validateConfig`, `formatReport`, `formatFix`, `unifiedDiff`, `expandGlob`, `matchesGlob` and the normalization helpers.
 
-[Unreleased]: https://github.com/BYDTechSolutions/drift-check/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/BYDTechSolutions/drift-check/releases/tag/v0.1.0
+[Unreleased]: https://github.com/BYDTechSolutions/drift-check/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/BYDTechSolutions/drift-check/releases/tag/v0.1.1
+[0.1.0]: https://github.com/BYDTechSolutions/drift-check/tree/277e8839a81b44ba9aa6cf23684e2edb2d141906

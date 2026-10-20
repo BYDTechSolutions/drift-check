@@ -1,6 +1,6 @@
 {
   "name": "@bydtech/drift-check",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fail CI when files that must stay identical across folders or repos have drifted apart, and copy the source of truth back over them.",
   "keywords": [
     "drift",
